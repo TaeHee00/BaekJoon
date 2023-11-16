@@ -1,15 +1,9 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
-
 public class Main {
 
-    static int[] dp = new int[1001];
+    static final int[] dp = new int[1001];
 
     public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        int N = read();
         dp[1] = 1;
         dp[2] = 2;
         dp[3] = 3;
@@ -19,5 +13,14 @@ public class Main {
         }
 
         System.out.println(dp[N]);
+    }
+
+    static int read() throws Exception{
+        int c=0,n=0;
+        while(true){
+            c=System.in.read()-48;
+            if(c < 0 || c  > 9) return n;
+            n=n*10+c;
+        }
     }
 }
