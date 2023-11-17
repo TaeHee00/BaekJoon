@@ -6,19 +6,19 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        String io = "";
+        StringBuilder io = new StringBuilder();
         int cnt = 0;
         int N = Integer.parseInt(bf.readLine());
         bf.readLine();
         String s = bf.readLine();
 
         for (int i = 0; i < N; i++) {
-            io += "IO";
+            io.append("IO");
         }
-        io += "I";
+        io.append("I");
 
         while (true) {
-            int pos = s.indexOf(io);
+            int pos = s.indexOf(String.valueOf(io));
             if (pos == -1) break;
             s = s.substring(pos + 2);
             cnt++;
